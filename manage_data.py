@@ -9,6 +9,11 @@ def init_json(file, db_name):
         json.dump(data, outfile)
 
 def get_element(file, id):
+    '''
+        The purpose of this function is to either make a new element with primary key 'id'
+        Or return an existing element with primary key 'id'
+        The user can have his own keys like 'unique key' in the template
+    '''
     with open(file, 'r') as f:
          data = json.load(f)
     flag = False
@@ -36,7 +41,9 @@ def get_element(file, id):
                 column_subsitude.append('[]')
         # json_string_element is the string we will build, which will later be converted into
         # JSON object
-        json_string_element = '{"id":'+id+','
+        json_string_element = '{"id":"'+id+'",'
+        #the id is added in quotes, becasue ID can be a number, or a bunch of characters. Doesn't matter
+        #this ID is used to either retrieve an element. or make a new element.
         i=0
         for i in range(len(column_names)):
             json_string_element = json_string_element + '"' + column_names[i] + '": ' + column_subsitude[i] + ','
@@ -88,5 +95,5 @@ def wash_element(file, element):
     with open(file, 'w') as f:
          json.dump(data, f)
 
-init_json('data.json', 'trial')
-get_element('data.json','104')
+#init_json('data.json', 'trial')
+get_element('data.json','102')
