@@ -1,4 +1,1 @@
-{"db_name": "trial",
-  "rows":
-  [
-    {"one more column": [], "unique id": -1, "other column name": "", "some column name": "", "a column": "False", "id": 104}]}
+{"db_name": "trial", "rows": [{"one more column": [], "last column": -1, "unique id": -1, "other column name": "", "some column name": "", "a column": "False", "id": 104}]}

@@ -28,7 +28,7 @@ def get_element(file, id):
         for each_column in column_type:
             if each_column.lower() == 'string':
                 column_subsitude.append('""')
-            elif each_column.lower() == 'number':
+            elif each_column.lower() == 'number' or each_column.lower() == 'int':
                 column_subsitude.append('-1')
             elif each_column.lower() == 'bool':
                 column_subsitude.append('"False"')
@@ -88,5 +88,5 @@ def wash_element(file, element):
     with open(file, 'w') as f:
          json.dump(data, f)
 
-#init_json('data.json', 'trial')
+init_json('data.json', 'trial')
 get_element('data.json','104')
