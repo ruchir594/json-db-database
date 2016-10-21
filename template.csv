@@ -1,6 +1,0 @@
-unique id,number
-some column name,string
-other column name,string
-one more column,array
-a column,bool
-last column,int
