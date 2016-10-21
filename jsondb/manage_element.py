@@ -69,5 +69,4 @@ def wash_element(file, element):
     with open(file, 'w') as f:
          json.dump(data, f)
 
-#init_json('data.json', 'trial')
 #print get_element('data.json','103')
