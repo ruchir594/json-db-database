@@ -11,18 +11,31 @@ The first column is the name of column, the second column will specify the type 
 
 <b> Example </b>
 
+template.json
+
+```
+{
+  "columns": [
+    ["unique id", "number"],
+    ["some column name", "string"],
+    ["other column name", "string"],
+    ["one more column", "array"],
+    ["a column", "bool"]
+  ]
+}
+
+```
+test.py
+
 ```
 from jsondb import manage_element
 
 dbfile = 'data.json'
-
 manage_element.init_json(dbfile, 'trial')
 
 a = manage_element.get_element(dbfile,'103')
-
 a['other column name'] = 'Testing on Oct 21'
 a['one more column'] = ['the', 'beatles', 21]
-
 manage_element.update_element(dbfile, a)
 
 print manage_element.get_element(dbfile,'103')
