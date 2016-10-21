@@ -11,7 +11,7 @@ The first column is the name of column, the second column will specify the type 
 
 <b> Example </b>
 
-'''
+```
 from jsondb import manage_element
 
 dbfile = 'data.json'
@@ -25,10 +25,12 @@ a['one more column'] = ['the', 'beatles', 21]
 
 manage_element.update_element(dbfile, a)
 
-print manage_element.get_element(dbfile,'103')'''
+print manage_element.get_element(dbfile,'103')
+```
 
-output
+Output
 
-'''
+```
 $ python test.py
-{u'one more column': [u'the', u'beatles', 21], u'unique id': -1, u'other column name': u'Testing on Oct 21', u'some column name': u'', u'a column': u'False', u'id': u'103'}'''
+{u'one more column': [u'the', u'beatles', 21], u'unique id': -1, u'other column name': u'Testing on Oct 21', u'some column name': u'', u'a column': u'False', u'id': u'103'}
+```
