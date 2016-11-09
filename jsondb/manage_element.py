@@ -1,7 +1,7 @@
 import json
 import time
 
-from reader import get_columns, convert_type
+from reader import get_columns, convert_type, check_type
 
 def init_json(file, db_name):
     data = {"db_name": db_name, "rows":[]}
@@ -63,10 +63,11 @@ def wash_element(file, element):
     column_names, column_types = get_columns()
     for i in data['rows']:
         if i['id'] == element['id']:
-            for each_name, each_type in column_names, column_types:
-                i['each_name'] = convert_type(each_type)
+            for (each_name, each_type) in zip(column_names, column_types):
+                i[each_name] = check_type(each_type)
         break
     with open(file, 'w') as f:
          json.dump(data, f)
 
 #print get_element('data.json','103')
+#
