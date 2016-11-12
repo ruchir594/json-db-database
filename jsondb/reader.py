@@ -33,3 +33,13 @@ def convert_type(value):
         return '"False"'
     if value == 'array':
         return '[]'
+
+def check_type(value):
+    if value == 'string':
+        return ""
+    if value == 'number':
+        return -1
+    if value == 'bool':
+        return "False"
+    if value == 'array':
+        return []
